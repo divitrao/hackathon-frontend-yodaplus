@@ -8,11 +8,16 @@
 import React from 'react';
 import type {PropsWithChildren} from 'react';
 import {
-  SafeAreaView
+  SafeAreaView, Text
 } from 'react-native';
 
 import { Provider } from 'react-redux'
-import { store } from './src/stores/store';
+import { store, persistor } from './src/stores/store';
+import { login } from './src/services/services';
+import Routes from './src/navigation/Routes';
+import { NavigationContainer } from '@react-navigation/native';
+import { PersistGate } from 'redux-persist/integration/react'
+
 
 
 
@@ -23,14 +28,26 @@ type SectionProps = PropsWithChildren<{
 
 
 function App(): JSX.Element {
+  if (__DEV__) {
+    import('./ReactotronConfig').then(() =>
+      console.log('Reactotron Configured'),
+    );
+  }
 
-
-
+  // console.log(store)
+  // login('divits','1234@1234').then((res)=>console.log(res.data)).catch((error)=>console.log(error,"oi"))
+  
   return (
-    <SafeAreaView>
-      <Provider store={store}>
+    <SafeAreaView style={{flex:1}}>
+      <NavigationContainer>
 
+      <Provider store={store}>
+      <PersistGate loading={<Text>Loading...</Text>} persistor={persistor}>
+          <Routes />
+          </PersistGate>
       </Provider>
+
+      </NavigationContainer>
     </SafeAreaView>
   );
 }
