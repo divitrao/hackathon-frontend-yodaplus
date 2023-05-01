@@ -14,11 +14,9 @@ const LoginScreen = () => {
     const dispatch = useDispatch()
 
     const pressed = async()=>{
-        console.log("iiiiiiiiii")
         const resposne:login_response = (await login(username,password)).data
 
         dispatch(loginAction({'access_token':resposne.access,'refresh_token':resposne.refresh}))
-        console.log(resposne,"000000000000")
     }
 
   return (

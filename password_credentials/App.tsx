@@ -34,8 +34,6 @@ function App(): JSX.Element {
     );
   }
 
-  // console.log(store)
-  // login('divits','1234@1234').then((res)=>console.log(res.data)).catch((error)=>console.log(error,"oi"))
   
   return (
     <SafeAreaView style={{flex:1}}>

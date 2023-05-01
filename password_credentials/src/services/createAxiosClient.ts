@@ -39,7 +39,6 @@ export const createAxiosClient = ({
   
     client.interceptors.request.use(
         (config)=>{
-            console.log("wwwwwwwwwwwwwwwwwwwwww",config.authorization)
             if (config.authorization !== false){
                 const token = getCurrentAccessToken()
                 if(token){

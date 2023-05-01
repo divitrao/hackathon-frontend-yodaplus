@@ -8,11 +8,9 @@ import { useAppSelector } from '../app/hooks';
 
 const Routes = () => {
     const RootStack = createNativeStackNavigator();
-    console.log("444444444444")
     
     const acces_token :string|null = useAppSelector((state)=>state.auth.access_token)
     const [loggedIn, setLoggedIn] = useState(acces_token?true:false)
-    console.log(acces_token,"==========")
    
     useEffect(()=>{
       if(acces_token){

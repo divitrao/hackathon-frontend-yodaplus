@@ -24,7 +24,6 @@ const CredentialCard = ({data}:{data:cred_list_res}) => {
   find_url_icon(data.website)
 
 
-  console.log(websiteUrlIcon)
   return (
     <TouchableOpacity
     onPress={()=>navigation.navigate(navigationpath.CREDENTIAL_DETAIL,{data:data,icon:websiteUrlIcon})}
