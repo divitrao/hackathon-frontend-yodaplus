@@ -23,3 +23,18 @@ export interface cred_list_res {
     website:string
     password:string
 }
+
+export interface website_url_icon_list {
+    url:string,
+    width:number,
+    height:number,
+    format:string,
+    bytes:number,
+    error:any,
+    sha1sum:string
+}
+
+export interface website_url_icon_res {
+    url:string,
+    icons: website_url_icon_list[]
+}

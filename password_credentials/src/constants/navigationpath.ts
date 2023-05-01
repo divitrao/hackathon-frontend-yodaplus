@@ -6,5 +6,7 @@ export default {
   HOME: 'Home' as const,
   LOGIN: 'Login' as const,
   REGISTER :'Register' as const,
-  CREDENTIAL_LIST: 'CredentialList' as const
+  CREDENTIAL_LIST: 'CredentialList' as const,
+  CREDENTIAL_DETAIL :'CredentialDetail' as const,
+  CREDENTIAL_FORM: 'CredentialForm' as const,
 }
